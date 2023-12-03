@@ -92,7 +92,7 @@ Welcome to the Differential Gene Expression Analysis page, focusing on Non-Small
 Bellow is an example of the analysis output showing DGE for TP53-mut vs TP53-wt NSCLC cell lines.
 """)
 # Gene selection dropdown
-selected_gene = st.selectbox("Select a Gene for DGE Analysis", mutation_selection)
+selected_gene = st.sidebar.selectbox("Select a Gene for DGE Analysis", mutation_selection)
 
 analysis_performed = False
 
