@@ -70,12 +70,11 @@ def perform_dge_analysis():
         counts=counts_df,
         metadata=metadata,
         design_factors="TP53_status",
-        refit_cooks=True,
-        n_cpus=8,
+        refit_cooks=True
     )
 
     dds.deseq2()
-    stat_res = DeseqStats(dds, n_cpus=8)
+    stat_res = DeseqStats(dds)
     stat_res.summary()
     return stat_res
 
