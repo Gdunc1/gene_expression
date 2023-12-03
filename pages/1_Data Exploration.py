@@ -12,7 +12,7 @@ Explore various genetic data aspects through interactive visualizations. Customi
 
 # Load necessary data
 model = pd.read_csv('data/Model.csv')
-mutation = pd.read_csv('Data/OmicsSomaticMutations_filter.csv', index_col=0)
+mutation = pd.read_csv('data/OmicsSomaticMutations_filter.csv', index_col=0)
 
 # First Plot: Top N OncotreePrimaryDisease Counts
 st.subheader("OncotreePrimaryDisease Counts")
