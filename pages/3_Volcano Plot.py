@@ -23,7 +23,7 @@ def create_volcano_plot(dataframe):
     return fig
 
 # Load the demo file
-demo_file = 'Data/DGE_results_demo.csv'
+demo_file = 'data/DGE_results_demo.csv'
 demo_data = pd.read_csv(demo_file, index_col=0)
 
 # Streamlit layout for volcano plot page
