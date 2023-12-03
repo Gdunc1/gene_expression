@@ -6,10 +6,10 @@ from io import StringIO
 import base64
 
 NSCLC_celllines = pd.read_csv('data/NSCLC_celllines_filter.csv')
-mutation = pd.read_csv('Data/OmicsSomaticMutations_filter.csv', index_col=0)
+mutation = pd.read_csv('data/OmicsSomaticMutations_filter.csv', index_col=0)
 mutation_selection = mutation.HugoSymbol.unique()
 
-demo_file = 'Data/DGE_results_demo.csv'
+demo_file = 'data/DGE_results_demo.csv'
 demo_data = pd.read_csv(demo_file, index_col=0)
 
 # Function to create a download link
@@ -33,7 +33,7 @@ def get_table_download_link(df, filename, text):
 
 # DGE Analysis Function
 def perform_dge_analysis():
-    rnaseq = pd.read_csv('Data/RNA_Non_Small_Cell_Lung_Cancer.csv', index_col=0)
+    rnaseq = pd.read_csv('data/RNA_Non_Small_Cell_Lung_Cancer.csv', index_col=0)
     
     mutation_filter = mutation[mutation.HugoSymbol == 'TP53']
     NSCLC_celllines['TP53_status'] = NSCLC_celllines.ModelID.isin(mutation_filter.ModelID)
@@ -115,4 +115,4 @@ if not analysis_performed:
     st.write("## Demo DGE Results")
     st.dataframe(demo_data)
 
-    st.markdown(get_table_download_link(demo_data, "Data/DGE_results_demo.csv", "Download Full DGE Results as CSV"), unsafe_allow_html=True)
+    st.markdown(get_table_download_link(demo_data, "data/DGE_results_demo.csv", "Download Full DGE Results as CSV"), unsafe_allow_html=True)
